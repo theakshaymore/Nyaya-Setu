@@ -4,6 +4,7 @@ import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
 
 import { env } from './config/env.js'
+import { authMiddleware } from './middleware/authMiddleware.js'
 import { adminRouter } from './routes/admin.js'
 import { authRouter } from './routes/auth.js'
 import { bailRouter } from './routes/bail.js'
@@ -44,12 +45,12 @@ app.get('/health', (_req, res) => {
 })
 
 app.use('/api/auth', authRouter)
-app.use('/api/chat', chatRouter)
-app.use('/api/fir', firRouter)
-app.use('/api/bail', bailRouter)
-app.use('/api/doc', docRouter)
-app.use('/api/rights', rightsRouter)
-app.use('/api/admin', adminRouter)
+app.use('/api/chat', authMiddleware, chatRouter)
+app.use('/api/fir', authMiddleware, firRouter)
+app.use('/api/bail', authMiddleware, bailRouter)
+app.use('/api/doc', authMiddleware, docRouter)
+app.use('/api/rights', authMiddleware, rightsRouter)
+app.use('/api/admin', authMiddleware, adminRouter)
 
 app.use((_req, res) => {
   return res.status(404).json({ error: 'Route not found' })
