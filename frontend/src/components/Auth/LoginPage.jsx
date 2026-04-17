@@ -1,27 +1,27 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
-import { useAuth } from '../../context/AuthContext.jsx'
+import { useAuth } from "../../context/AuthContext.jsx";
 
 export function LoginPage() {
-  const navigate = useNavigate()
-  const { login, isAuthLoading } = useAuth()
+  const navigate = useNavigate();
+  const { login, isAuthLoading } = useAuth();
   const [form, setForm] = useState({
-    email: '',
-    password: ''
-  })
-  const [error, setError] = useState('')
+    email: "akshaymoretest@gmail.com",
+    password: "monica",
+  });
+  const [error, setError] = useState("");
 
   async function handleSubmit(event) {
-    event.preventDefault()
-    setError('')
+    event.preventDefault();
+    setError("");
 
     try {
-      await login(form.email, form.password)
-      navigate('/', { replace: true })
+      await login(form.email, form.password);
+      navigate("/", { replace: true });
     } catch (requestError) {
-      setError(requestError.response?.data?.error || 'Sign in failed.')
+      setError(requestError.response?.data?.error || "Sign in failed.");
     }
   }
 
@@ -42,7 +42,10 @@ export function LoginPage() {
 
         <form className="space-y-5 p-8" onSubmit={handleSubmit}>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-700" htmlFor="email">
+            <label
+              className="text-sm font-medium text-slate-700"
+              htmlFor="email"
+            >
               Email
             </label>
             <input
@@ -51,7 +54,10 @@ export function LoginPage() {
               className="field"
               value={form.email}
               onChange={(event) =>
-                setForm((current) => ({ ...current, email: event.target.value }))
+                setForm((current) => ({
+                  ...current,
+                  email: event.target.value,
+                }))
               }
               placeholder="you@example.com"
             />
@@ -72,20 +78,24 @@ export function LoginPage() {
               onChange={(event) =>
                 setForm((current) => ({
                   ...current,
-                  password: event.target.value
+                  password: event.target.value,
                 }))
               }
               placeholder="Enter your password"
             />
           </div>
 
-          <button type="submit" className="primary-button w-full" disabled={isAuthLoading}>
-            {isAuthLoading ? 'Signing in...' : 'Sign in'}
+          <button
+            type="submit"
+            className="primary-button w-full"
+            disabled={isAuthLoading}
+          >
+            {isAuthLoading ? "Signing in..." : "Sign in"}
           </button>
 
           {error ? <p className="text-sm text-rose-600">{error}</p> : null}
         </form>
       </motion.div>
     </div>
-  )
+  );
 }
