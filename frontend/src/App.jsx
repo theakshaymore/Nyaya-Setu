@@ -52,6 +52,19 @@ export default function App() {
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route
+        path="/admin"
+        element={
+          <AppLayout
+            theme={theme}
+            onToggleTheme={() =>
+              setTheme((current) => (current === 'light' ? 'dark' : 'light'))
+            }
+          />
+        }
+      >
+        <Route path="" element={<AdminPanel />} />
+      </Route>
+      <Route
         element={
           <ProtectedRoute>
             <AppLayout
@@ -64,7 +77,6 @@ export default function App() {
         }
       >
         <Route path="/" element={<ChatModule />} />
-        <Route path="/admin" element={<AdminPanel />} />
         <Route path="/fir" element={<FIRModule />} />
         <Route path="/bail" element={<BailModule />} />
         <Route path="/doc" element={<DocModule />} />
