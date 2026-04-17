@@ -54,3 +54,28 @@ export async function getUseLocalLlm() {
   const config = await getOrCreateLlmConfig()
   return config.use_local_llm ?? false
 }
+
+export async function updateUseLocalLlm(useLocalLlm) {
+  assertSupabaseConfigured()
+
+  const { data, error } = await supabase
+    .from('llm_config')
+    .upsert(
+      {
+        id: 1,
+        use_local_llm: useLocalLlm,
+        updated_at: new Date().toISOString()
+      },
+      {
+        onConflict: 'id'
+      }
+    )
+    .select('id, use_local_llm, updated_at')
+    .single()
+
+  if (error) {
+    throw mapLlmConfigError(error)
+  }
+
+  return data
+}

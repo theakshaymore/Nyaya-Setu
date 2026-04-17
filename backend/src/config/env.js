@@ -9,7 +9,7 @@ export const env = {
   supabaseUrl: process.env.SUPABASE_URL || '',
   supabaseServiceKey: process.env.SUPABASE_SERVICE_KEY || '',
   groqApiKey: process.env.GROQ_API_KEY || '',
-  groqModel: process.env.GROQ_MODEL || 'llama-3.1-70b-versatile',
+  groqModel: process.env.GROQ_MODEL || 'llama-3.3-70b-versatile',
   ollamaBaseUrl: process.env.OLLAMA_BASE_URL || 'http://localhost:11434',
   ollamaModel:
     process.env.OLLAMA_MODEL ||
