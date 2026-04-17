@@ -24,8 +24,8 @@ export default {
         shell: 'var(--color-bg-canvas)'
       },
       fontFamily: {
-        display: ['Inter', 'sans-serif'],
-        body: ['Inter', 'sans-serif']
+        display: ['"Work Sans"', 'sans-serif'],
+        body: ['"Work Sans"', 'sans-serif']
       },
       boxShadow: {
         legal:

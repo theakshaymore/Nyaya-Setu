@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --font-family-primary: Inter, sans-serif;
+    --font-family-primary: "Work Sans", sans-serif;
     --font-size-xs: 11px;
     --font-size-sm: 12px;
     --font-size-md: 14px;
@@ -34,21 +34,43 @@
     --color-text-muted: #575757;
     --color-text-inverse: #0000ee;
     --color-surface-base: #000000;
-    --color-surface-muted: #ffffff;
+    --color-surface-muted: rgba(255, 255, 255, 0.82);
     --color-surface-raised: #17803d;
     --color-surface-strong: #549467;
-    --color-border-subtle: #d7d7d7;
-    --color-border-strong: #9a9a9a;
-    --color-bg-canvas: #f6f7f6;
+    --color-border-subtle: rgba(10, 10, 10, 0.12);
+    --color-border-strong: rgba(10, 10, 10, 0.24);
+    --color-bg-canvas: #eef3f6;
     --color-focus-ring: #17803d;
     --color-state-error: #b42318;
     --color-state-error-surface: #fef3f2;
+    --gradient-hero:
+      linear-gradient(180deg, rgba(61, 156, 121, 0.95) 0%, rgba(153, 208, 201, 0.72) 34%, rgba(212, 223, 240, 0.54) 58%, rgba(246, 247, 246, 0.96) 88%);
+    --surface-glass: rgba(255, 255, 255, 0.64);
     color: var(--color-text-primary);
     background: var(--color-bg-canvas);
     font-family: var(--font-family-primary);
     font-size: var(--font-size-md);
     line-height: var(--line-height-base);
     font-weight: 400;
+  }
+
+  :root[data-theme='dark'] {
+    --color-text-primary: #f5f7f6;
+    --color-text-secondary: #d6ddd8;
+    --color-text-muted: #aab8af;
+    --color-text-inverse: #8fb3ff;
+    --color-surface-muted: rgba(16, 20, 19, 0.78);
+    --color-surface-raised: #2ba85b;
+    --color-surface-strong: #549467;
+    --color-border-subtle: rgba(255, 255, 255, 0.1);
+    --color-border-strong: rgba(255, 255, 255, 0.22);
+    --color-bg-canvas: #09100d;
+    --color-focus-ring: #70d39a;
+    --color-state-error: #f97066;
+    --color-state-error-surface: rgba(185, 28, 28, 0.16);
+    --gradient-hero:
+      linear-gradient(180deg, rgba(28, 106, 83, 0.92) 0%, rgba(23, 57, 58, 0.9) 38%, rgba(13, 18, 28, 0.92) 100%);
+    --surface-glass: rgba(12, 16, 16, 0.56);
   }
 
   html {
@@ -58,7 +80,10 @@
   body {
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(180deg, #f8faf8 0%, #f3f6f3 100%);
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      var(--gradient-hero);
+    background-size: 220px 100%, 100% 100%;
   }
 
   * {
@@ -87,11 +112,13 @@
     @apply border shadow-legal;
     border-color: var(--color-border-subtle);
     border-radius: var(--radius-sm);
-    background: var(--color-surface-muted);
+    background: var(--surface-glass);
+    backdrop-filter: blur(18px);
   }
 
   .module-shell {
-    @apply panel min-h-[calc(100vh-7rem)] overflow-hidden;
+    @apply panel overflow-hidden;
+    min-height: min(72vh, calc(100dvh - 10rem));
   }
 
   .field {
@@ -100,8 +127,12 @@
     border-color: var(--color-border-subtle);
     border-radius: var(--radius-xs);
     padding: var(--space-4) var(--space-5);
-    background: var(--color-surface-muted);
+    background: rgba(255, 255, 255, 0.78);
     color: var(--color-text-primary);
+  }
+
+  :root[data-theme='dark'] .field {
+    background: rgba(9, 15, 14, 0.82);
   }
 
   .field:hover {
@@ -157,13 +188,13 @@
     border-radius: var(--radius-sm);
     padding: var(--space-4) var(--space-5);
     border-color: var(--color-border-subtle);
-    background: var(--color-surface-muted);
+    background: rgba(255, 255, 255, 0.64);
     color: var(--color-text-secondary);
   }
 
   .secondary-button:hover {
     border-color: var(--color-surface-raised);
-    background: #f8fbf8;
+    background: rgba(255, 255, 255, 0.78);
   }
 
   .eyebrow {
@@ -192,5 +223,19 @@
     padding: 0 var(--space-4);
     background: #eef7f0;
     color: var(--color-surface-raised);
+  }
+
+  .theme-toggle {
+    @apply inline-flex items-center gap-2 border text-sm font-medium transition;
+    min-height: 40px;
+    border-radius: var(--radius-md);
+    padding: 0 var(--space-4);
+    border-color: var(--color-border-subtle);
+    background: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-secondary);
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--color-surface-raised);
   }
 }

@@ -58,8 +58,8 @@ export function ChatModule() {
   }
 
   return (
-    <div className="module-shell flex flex-col">
-      <div className="flex-1 space-y-4 overflow-y-auto px-4 py-6 md:px-8">
+    <div className="module-shell flex h-[calc(100dvh-11rem)] flex-col md:h-[calc(100dvh-9rem)]">
+      <div className="flex-1 space-y-4 overflow-y-auto px-3 py-4 md:px-8 md:py-6">
         {messages.map((message, index) => (
           <motion.div
             key={message.id}
@@ -73,7 +73,7 @@ export function ChatModule() {
 
         {isSending ? (
           <div className="flex justify-start">
-            <div className="rounded-3xl border border-slate-200 bg-white px-5 py-4 text-sm text-slate-700">
+            <div className="rounded-[12px] border border-border-subtle bg-[rgba(255,255,255,0.78)] px-5 py-4 text-sm text-text-secondary">
               <LoadingDots />
             </div>
           </div>

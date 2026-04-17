@@ -17,16 +17,17 @@ export function ChatInput({ onSend, isSending }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="border-t border-slate-200 bg-paper/90 px-4 py-4 backdrop-blur"
+      className="sticky bottom-0 border-t border-border-subtle bg-[rgba(255,255,255,0.72)] px-3 py-3 backdrop-blur md:px-4"
+      style={{ paddingBottom: 'max(12px, env(safe-area-inset-bottom))' }}
     >
       <div className="flex flex-col gap-3 md:flex-row">
         <textarea
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          className="field min-h-[84px] resize-none"
+          className="field min-h-[72px] resize-none md:min-h-[84px]"
           placeholder="Ask a question about Indian law..."
         />
-        <button type="submit" className="primary-button md:min-w-36" disabled={isSending}>
+        <button type="submit" className="primary-button w-full md:min-w-36 md:w-auto" disabled={isSending}>
           {isSending ? 'Sending...' : 'Send'}
         </button>
       </div>

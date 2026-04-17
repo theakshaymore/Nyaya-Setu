@@ -11,11 +11,11 @@ const titles = {
   '/admin': 'Admin Panel'
 }
 
-export function Topbar() {
+export function Topbar({ theme, onToggleTheme }) {
   const location = useLocation()
 
   return (
-    <div className="panel mb-6 flex flex-col gap-4 px-5 py-4 md:flex-row md:items-center md:justify-between md:px-6">
+    <div className="panel mb-4 flex flex-col gap-4 px-4 py-4 md:mb-6 md:flex-row md:items-center md:justify-between md:px-6">
       <div>
         <p className="eyebrow">Implementation-focused workspace</p>
         <p className="mt-2 text-[28px] font-semibold leading-[1.1] text-text-primary">
@@ -25,7 +25,12 @@ export function Topbar() {
           Clear workflows for legal drafting, rights guidance, and structured analysis.
         </p>
       </div>
-      <DisclaimerBadge />
+      <div className="flex flex-wrap items-center gap-3">
+        <button type="button" className="theme-toggle" onClick={onToggleTheme}>
+          <span>{theme === 'light' ? 'Dark mode' : 'Light mode'}</span>
+        </button>
+        <DisclaimerBadge />
+      </div>
     </div>
   )
 }

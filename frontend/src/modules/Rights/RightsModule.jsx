@@ -97,16 +97,18 @@ export function RightsModule() {
         <button
           key={scenario.title}
           type="button"
-          className="panel bg-white p-6 text-left transition hover:-translate-y-1 hover:border-gold/50"
+          className="panel p-6 text-left transition hover:-translate-y-1 hover:border-surface-raised/60"
           onClick={() => {
             setActiveScenario(scenario.title)
             setMessages([createIntroMessage(scenario.title)])
             toast.success(`Opened ${scenario.title}.`)
           }}
         >
-          <p className="text-xs uppercase tracking-[0.24em] text-gold">Scenario</p>
-          <p className="mt-3 font-display text-3xl text-ink">{scenario.title}</p>
-          <p className="mt-3 text-sm leading-7 text-slate-500">
+          <p className="eyebrow">Scenario</p>
+          <p className="mt-3 text-[28px] font-semibold leading-[1.1] text-text-primary">
+            {scenario.title}
+          </p>
+          <p className="mt-3 text-sm leading-7 text-text-secondary">
             {scenario.description}
           </p>
         </button>

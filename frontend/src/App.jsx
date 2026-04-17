@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
 
 import { LoginPage } from './components/Auth/LoginPage.jsx'
@@ -25,11 +26,23 @@ function PlaceholderModule({ title }) {
 }
 
 function AppLayout() {
+  const [theme, setTheme] = useState(() => localStorage.getItem('nyayasetu-theme') || 'light')
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    localStorage.setItem('nyayasetu-theme', theme)
+  }, [theme])
+
   return (
     <div className="min-h-screen md:grid md:grid-cols-[280px_minmax(0,1fr)]">
       <Sidebar />
-      <main className="min-w-0 p-4 md:p-6">
-        <Topbar />
+      <main className="min-w-0 p-3 md:p-6">
+        <Topbar
+          theme={theme}
+          onToggleTheme={() =>
+            setTheme((current) => (current === 'light' ? 'dark' : 'light'))
+          }
+        />
         <Outlet />
       </main>
     </div>
