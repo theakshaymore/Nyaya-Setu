@@ -32,33 +32,58 @@ export function LoginPage() {
         animate={{ opacity: 1, y: 0 }}
         className="panel grid w-full max-w-5xl overflow-hidden lg:grid-cols-[1.1fr_0.9fr]"
       >
-        <div className="panel border-b-0 border-r-0 px-6 py-8 md:px-8 lg:border-r lg:border-border-subtle">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.08 }}
+          className="panel border-b-0 border-r-0 px-6 py-8 md:px-8 lg:border-r lg:border-border-subtle"
+        >
           <p className="eyebrow">Secure legal workspace</p>
           <p className="mt-3 text-[40px] font-semibold leading-[1.02] text-text-primary">
-            Bridge legal guidance, drafting, and rights workflows in one place
+            Understand Indian legal issues faster and act with more clarity
           </p>
           <p className="mt-4 max-w-xl text-sm leading-7 text-text-secondary">
-            NyayaSetu helps teams and individuals move from confusion to action with
-            structured legal chat, FIR drafting, bail analysis, document simplification,
-            and scenario-based rights guidance.
+            NyayaSetu is an Indian legal assistant workspace. Ask law questions, draft FIRs,
+            check bail position, simplify legal documents, and explore rights-based next steps
+            from one dashboard.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            <div className="panel px-4 py-4">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.14 }}
+              className="panel px-4 py-4"
+            >
               <p className="eyebrow">Draft</p>
               <p className="mt-2 text-sm text-text-secondary">Generate formal FIR drafts from incident facts.</p>
-            </div>
-            <div className="panel px-4 py-4">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="panel px-4 py-4"
+            >
               <p className="eyebrow">Assess</p>
               <p className="mt-2 text-sm text-text-secondary">Check bail position and simplify legal documents quickly.</p>
-            </div>
-            <div className="panel px-4 py-4">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.26 }}
+              className="panel px-4 py-4"
+            >
               <p className="eyebrow">Act</p>
               <p className="mt-2 text-sm text-text-secondary">Get rights-focused next steps for practical scenarios.</p>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="panel border-b-0 px-6 py-8 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, x: 18 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1 }}
+          className="panel border-b-0 px-6 py-8 md:px-8"
+        >
           <p className="eyebrow">Secure access</p>
           <p className="mt-3 text-[32px] font-semibold leading-[1.05] text-text-primary">
             Sign in to continue
@@ -121,7 +146,7 @@ export function LoginPage() {
               </p>
             ) : null}
           </form>
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   )

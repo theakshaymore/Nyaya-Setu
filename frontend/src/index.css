@@ -29,23 +29,24 @@
     --shadow-1:
       rgba(0, 0, 0, 0.08) 0px 1px 2px -0.5px,
       rgba(0, 0, 0, 0.12) 0px -0.5px 0px 0px inset;
-    --color-text-primary: #0a0a0a;
-    --color-text-secondary: #1d1d1d;
-    --color-text-muted: #575757;
+    --color-text-primary: #030e0e;
+    --color-text-secondary: #24463f;
+    --color-text-muted: #547d66;
     --color-text-inverse: #0000ee;
     --color-surface-base: #000000;
-    --color-surface-muted: rgba(255, 255, 255, 0.82);
-    --color-surface-raised: #17803d;
-    --color-surface-strong: #549467;
-    --color-border-subtle: rgba(10, 10, 10, 0.12);
-    --color-border-strong: rgba(10, 10, 10, 0.24);
-    --color-bg-canvas: #eef3f6;
-    --color-focus-ring: #17803d;
+    --color-surface-muted: rgba(224, 229, 214, 0.72);
+    --color-surface-raised: #24463f;
+    --color-surface-strong: #547d66;
+    --color-border-subtle: rgba(36, 70, 63, 0.16);
+    --color-border-strong: rgba(36, 70, 63, 0.32);
+    --color-bg-canvas: #edf1e7;
+    --color-focus-ring: #547d66;
     --color-state-error: #b42318;
     --color-state-error-surface: #fef3f2;
     --gradient-hero:
-      linear-gradient(180deg, rgba(61, 156, 121, 0.95) 0%, rgba(153, 208, 201, 0.72) 34%, rgba(212, 223, 240, 0.54) 58%, rgba(246, 247, 246, 0.96) 88%);
-    --surface-glass: rgba(255, 255, 255, 0.64);
+      radial-gradient(circle at top center, rgba(150, 178, 144, 0.58), transparent 38%),
+      linear-gradient(180deg, rgba(84, 125, 102, 0.58) 0%, rgba(150, 178, 144, 0.4) 34%, rgba(224, 229, 214, 0.32) 62%, rgba(237, 241, 231, 0.88) 100%);
+    --surface-glass: rgba(237, 241, 231, 0.58);
     color: var(--color-text-primary);
     background: var(--color-bg-canvas);
     font-family: var(--font-family-primary);
@@ -55,22 +56,23 @@
   }
 
   :root[data-theme='dark'] {
-    --color-text-primary: #f5f7f6;
-    --color-text-secondary: #d6ddd8;
-    --color-text-muted: #aab8af;
+    --color-text-primary: #e0e5d6;
+    --color-text-secondary: #c8d2c3;
+    --color-text-muted: #96b290;
     --color-text-inverse: #8fb3ff;
-    --color-surface-muted: rgba(16, 20, 19, 0.78);
-    --color-surface-raised: #2ba85b;
-    --color-surface-strong: #549467;
-    --color-border-subtle: rgba(255, 255, 255, 0.1);
-    --color-border-strong: rgba(255, 255, 255, 0.22);
-    --color-bg-canvas: #09100d;
-    --color-focus-ring: #70d39a;
+    --color-surface-muted: rgba(10, 19, 18, 0.76);
+    --color-surface-raised: #96b290;
+    --color-surface-strong: #547d66;
+    --color-border-subtle: rgba(224, 229, 214, 0.12);
+    --color-border-strong: rgba(224, 229, 214, 0.24);
+    --color-bg-canvas: #030e0e;
+    --color-focus-ring: #96b290;
     --color-state-error: #f97066;
     --color-state-error-surface: rgba(185, 28, 28, 0.16);
     --gradient-hero:
-      linear-gradient(180deg, rgba(28, 106, 83, 0.92) 0%, rgba(23, 57, 58, 0.9) 38%, rgba(13, 18, 28, 0.92) 100%);
-    --surface-glass: rgba(12, 16, 16, 0.56);
+      radial-gradient(circle at top center, rgba(84, 125, 102, 0.2), transparent 34%),
+      linear-gradient(180deg, rgba(36, 70, 63, 0.82) 0%, rgba(3, 14, 14, 0.92) 100%);
+    --surface-glass: rgba(10, 19, 18, 0.58);
   }
 
   html {
@@ -81,7 +83,7 @@
     margin: 0;
     min-height: 100vh;
     background:
-      linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(224, 229, 214, 0.08) 1px, transparent 1px),
       var(--gradient-hero);
     background-size: 220px 100%, 100% 100%;
   }
@@ -127,12 +129,12 @@
     border-color: var(--color-border-subtle);
     border-radius: var(--radius-xs);
     padding: var(--space-4) var(--space-5);
-    background: rgba(255, 255, 255, 0.78);
+    background: rgba(224, 229, 214, 0.54);
     color: var(--color-text-primary);
   }
 
   :root[data-theme='dark'] .field {
-    background: rgba(9, 15, 14, 0.82);
+    background: rgba(3, 14, 14, 0.72);
   }
 
   .field:hover {
@@ -188,13 +190,13 @@
     border-radius: var(--radius-sm);
     padding: var(--space-4) var(--space-5);
     border-color: var(--color-border-subtle);
-    background: rgba(255, 255, 255, 0.64);
+    background: rgba(224, 229, 214, 0.44);
     color: var(--color-text-secondary);
   }
 
   .secondary-button:hover {
     border-color: var(--color-surface-raised);
-    background: rgba(255, 255, 255, 0.78);
+    background: rgba(224, 229, 214, 0.62);
   }
 
   .eyebrow {
@@ -226,12 +228,13 @@
   }
 
   .theme-toggle {
-    @apply inline-flex items-center gap-2 border text-sm font-medium transition;
+    @apply inline-flex items-center justify-center border transition;
     min-height: 40px;
+    min-width: 40px;
     border-radius: var(--radius-md);
-    padding: 0 var(--space-4);
+    padding: 0;
     border-color: var(--color-border-subtle);
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(224, 229, 214, 0.4);
     color: var(--color-text-secondary);
   }
 

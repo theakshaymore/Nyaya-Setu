@@ -13,6 +13,7 @@ const titles = {
 
 export function Topbar({ theme, onToggleTheme }) {
   const location = useLocation()
+  const isLight = theme === 'light'
 
   return (
     <div className="panel mb-4 flex flex-col gap-4 px-4 py-4 md:mb-6 md:flex-row md:items-center md:justify-between md:px-6">
@@ -25,11 +26,19 @@ export function Topbar({ theme, onToggleTheme }) {
           Clear workflows for legal drafting, rights guidance, and structured analysis.
         </p>
       </div>
-      <div className="flex flex-wrap items-center gap-3">
-        <button type="button" className="theme-toggle" onClick={onToggleTheme}>
-          <span>{theme === 'light' ? 'Dark mode' : 'Light mode'}</span>
-        </button>
+      <div className="flex flex-wrap items-center gap-3 md:ml-auto">
         <DisclaimerBadge />
+        <button
+          type="button"
+          className="theme-toggle"
+          onClick={onToggleTheme}
+          aria-label={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
+          title={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
+        >
+          <span className="text-base" aria-hidden="true">
+            {isLight ? '☾' : '☼'}
+          </span>
+        </button>
       </div>
     </div>
   )
