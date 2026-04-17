@@ -4,7 +4,11 @@ import { LoginPage } from './components/Auth/LoginPage.jsx'
 import { ProtectedRoute } from './components/Auth/ProtectedRoute.jsx'
 import { Sidebar } from './components/Layout/Sidebar.jsx'
 import { Topbar } from './components/Layout/Topbar.jsx'
+import { BailModule } from './modules/Bail/BailModule.jsx'
 import { ChatModule } from './modules/Chat/ChatModule.jsx'
+import { DocModule } from './modules/DocSimplifier/DocModule.jsx'
+import { FIRModule } from './modules/FIR/FIRModule.jsx'
+import { RightsModule } from './modules/Rights/RightsModule.jsx'
 import { AdminPanel } from './pages/AdminPanel.jsx'
 
 function PlaceholderModule({ title }) {
@@ -22,9 +26,9 @@ function PlaceholderModule({ title }) {
 
 function AppLayout() {
   return (
-    <div className="min-h-screen md:grid md:grid-cols-[280px_1fr]">
+    <div className="min-h-screen md:grid md:grid-cols-[280px_minmax(0,1fr)]">
       <Sidebar />
-      <main className="p-4 md:p-6">
+      <main className="min-w-0 p-4 md:p-6">
         <Topbar />
         <Outlet />
       </main>
@@ -45,13 +49,10 @@ export default function App() {
       >
         <Route path="/" element={<ChatModule />} />
         <Route path="/admin" element={<AdminPanel />} />
-        <Route path="/fir" element={<PlaceholderModule title="FIR Draft" />} />
-        <Route path="/bail" element={<PlaceholderModule title="Bail Checker" />} />
-        <Route path="/doc" element={<PlaceholderModule title="Doc Simplifier" />} />
-        <Route
-          path="/rights"
-          element={<PlaceholderModule title="Know Your Rights" />}
-        />
+        <Route path="/fir" element={<FIRModule />} />
+        <Route path="/bail" element={<BailModule />} />
+        <Route path="/doc" element={<DocModule />} />
+        <Route path="/rights" element={<RightsModule />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
