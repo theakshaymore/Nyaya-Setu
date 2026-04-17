@@ -43,10 +43,13 @@
     --color-focus-ring: #547d66;
     --color-state-error: #b42318;
     --color-state-error-surface: #fef3f2;
+    --color-button-primary-text: #e0e5d6;
     --gradient-hero:
-      radial-gradient(circle at top center, rgba(150, 178, 144, 0.58), transparent 38%),
-      linear-gradient(180deg, rgba(84, 125, 102, 0.58) 0%, rgba(150, 178, 144, 0.4) 34%, rgba(224, 229, 214, 0.32) 62%, rgba(237, 241, 231, 0.88) 100%);
+      radial-gradient(circle at top center, rgba(150, 178, 144, 0.36), transparent 34%),
+      linear-gradient(180deg, rgba(84, 125, 102, 0.36) 0%, rgba(150, 178, 144, 0.28) 34%, rgba(224, 229, 214, 0.2) 62%, rgba(237, 241, 231, 0.88) 100%);
     --surface-glass: rgba(237, 241, 231, 0.58);
+    --surface-soft: rgba(224, 229, 214, 0.44);
+    --surface-strong: rgba(224, 229, 214, 0.8);
     color: var(--color-text-primary);
     background: var(--color-bg-canvas);
     font-family: var(--font-family-primary);
@@ -69,10 +72,13 @@
     --color-focus-ring: #96b290;
     --color-state-error: #f97066;
     --color-state-error-surface: rgba(185, 28, 28, 0.16);
+    --color-button-primary-text: #030e0e;
     --gradient-hero:
       radial-gradient(circle at top center, rgba(84, 125, 102, 0.2), transparent 34%),
       linear-gradient(180deg, rgba(36, 70, 63, 0.82) 0%, rgba(3, 14, 14, 0.92) 100%);
     --surface-glass: rgba(10, 19, 18, 0.58);
+    --surface-soft: rgba(10, 19, 18, 0.72);
+    --surface-strong: rgba(10, 19, 18, 0.9);
   }
 
   html {
@@ -165,7 +171,7 @@
     padding: var(--space-4) var(--space-5);
     background: var(--color-surface-raised);
     border-color: var(--color-surface-raised);
-    color: var(--color-surface-muted);
+    color: var(--color-button-primary-text);
   }
 
   .primary-button:hover {
@@ -225,6 +231,14 @@
     padding: 0 var(--space-4);
     background: #eef7f0;
     color: var(--color-surface-raised);
+  }
+
+  .surface-soft {
+    background: var(--surface-soft);
+  }
+
+  .surface-strong {
+    background: var(--surface-strong);
   }
 
   .theme-toggle {

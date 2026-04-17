@@ -11,6 +11,7 @@ import { DocModule } from './modules/DocSimplifier/DocModule.jsx'
 import { FIRModule } from './modules/FIR/FIRModule.jsx'
 import { RightsModule } from './modules/Rights/RightsModule.jsx'
 import { AdminPanel } from './pages/AdminPanel.jsx'
+import { LandingPage } from './pages/LandingPage.jsx'
 
 function PlaceholderModule({ title }) {
   return (
@@ -52,6 +53,12 @@ export default function App() {
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route
+        path="/"
+        element={<LandingPage theme={theme} onToggleTheme={() =>
+          setTheme((current) => (current === 'light' ? 'dark' : 'light'))
+        } />}
+      />
+      <Route
         path="/admin"
         element={
           <AppLayout
@@ -76,11 +83,11 @@ export default function App() {
           </ProtectedRoute>
         }
       >
-        <Route path="/" element={<ChatModule />} />
-        <Route path="/fir" element={<FIRModule />} />
-        <Route path="/bail" element={<BailModule />} />
-        <Route path="/doc" element={<DocModule />} />
-        <Route path="/rights" element={<RightsModule />} />
+        <Route path="/app" element={<ChatModule />} />
+        <Route path="/app/fir" element={<FIRModule />} />
+        <Route path="/app/bail" element={<BailModule />} />
+        <Route path="/app/doc" element={<DocModule />} />
+        <Route path="/app/rights" element={<RightsModule />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

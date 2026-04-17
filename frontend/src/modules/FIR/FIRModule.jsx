@@ -91,7 +91,7 @@ export function FIRModule() {
       >
         <div className="grid gap-5 md:grid-cols-2">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-700">Complainant Name</label>
+            <label className="text-sm font-medium text-text-secondary">Complainant Name</label>
             <input
               className="field"
               value={form.name}
@@ -101,7 +101,7 @@ export function FIRModule() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-700">Date of Incident</label>
+            <label className="text-sm font-medium text-text-secondary">Date of Incident</label>
             <input
               type="date"
               className="field"
@@ -111,7 +111,7 @@ export function FIRModule() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-700">Location</label>
+            <label className="text-sm font-medium text-text-secondary">Location</label>
             <input
               className="field"
               value={form.location}
@@ -121,7 +121,7 @@ export function FIRModule() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-700">State</label>
+            <label className="text-sm font-medium text-text-secondary">State</label>
             <input
               className="field"
               value={form.state}
@@ -133,7 +133,7 @@ export function FIRModule() {
 
         <div className="mt-5 grid gap-5 md:grid-cols-2">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-700">Accused Details</label>
+            <label className="text-sm font-medium text-text-secondary">Accused Details</label>
             <textarea
               className="field min-h-[148px] resize-none"
               value={form.accused}
@@ -143,7 +143,7 @@ export function FIRModule() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-700">
+            <label className="text-sm font-medium text-text-secondary">
               Incident Description
             </label>
             <textarea

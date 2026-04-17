@@ -46,16 +46,16 @@ export function BailModule() {
         onSubmit={handleSubmit}
         className="panel self-start p-6 md:p-8"
       >
-        <p className="text-xs uppercase tracking-[0.24em] text-gold">
+        <p className="eyebrow">
           Bail Checker
         </p>
-        <p className="mt-3 font-display text-3xl text-ink">
+        <p className="mt-3 text-[28px] font-semibold leading-[1.1] text-text-primary">
           Quick bail guidance for an IPC section
         </p>
 
         <div className="mt-6 space-y-5">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-700">
+            <label className="text-sm font-medium text-text-secondary">
               IPC section or offense description
             </label>
             <input
@@ -67,7 +67,7 @@ export function BailModule() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-700">State</label>
+            <label className="text-sm font-medium text-text-secondary">State</label>
             <select
               className="field"
               value={state}
@@ -88,21 +88,21 @@ export function BailModule() {
       </motion.form>
 
       <section className="panel self-start overflow-hidden">
-        <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
-          <p className="text-xs uppercase tracking-[0.24em] text-gold">
+        <div className="border-b border-border-subtle px-6 py-4 surface-soft">
+          <p className="eyebrow">
             Structured Output
           </p>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-text-secondary">
             Bailable status, court path, documents, and likely timing.
           </p>
         </div>
         <div className="px-6 py-6">
           {analysis ? (
-            <pre className="whitespace-pre-wrap font-body text-sm leading-8 text-slate-800">
+            <pre className="whitespace-pre-wrap font-body text-sm leading-8 text-text-primary">
               {analysis}
             </pre>
           ) : (
-            <p className="text-sm leading-7 text-slate-500">
+            <p className="text-sm leading-7 text-text-secondary">
               Submit an IPC section to see a structured bail analysis here.
             </p>
           )}

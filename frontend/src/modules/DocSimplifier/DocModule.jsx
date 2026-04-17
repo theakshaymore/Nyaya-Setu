@@ -35,10 +35,10 @@ export function DocModule() {
       >
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.24em] text-gold">
+            <p className="eyebrow">
               Doc Simplifier
             </p>
-            <p className="mt-3 font-display text-3xl text-ink">
+            <p className="mt-3 text-[28px] font-semibold leading-[1.1] text-text-primary">
               Turn dense clauses into plain language
             </p>
           </div>
@@ -56,18 +56,18 @@ export function DocModule() {
       </motion.form>
 
       <section className="panel overflow-hidden">
-        <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
-          <p className="text-xs uppercase tracking-[0.24em] text-gold">
+        <div className="border-b border-border-subtle px-6 py-4 surface-soft">
+          <p className="eyebrow">
             Clause Analysis
           </p>
         </div>
         <div className="px-6 py-6">
           {analysis ? (
-            <pre className="whitespace-pre-wrap font-body text-sm leading-8 text-slate-800">
+            <pre className="whitespace-pre-wrap font-body text-sm leading-8 text-text-primary">
               {analysis}
             </pre>
           ) : (
-            <p className="text-sm leading-7 text-slate-500">
+            <p className="text-sm leading-7 text-text-secondary">
               Your plain-language summary, red flags, and overall assessment will appear here.
             </p>
           )}

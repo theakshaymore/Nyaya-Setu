@@ -73,7 +73,7 @@ export function ChatModule() {
 
         {isSending ? (
           <div className="flex justify-start">
-            <div className="rounded-[12px] border border-border-subtle bg-[rgba(255,255,255,0.78)] px-5 py-4 text-sm text-text-secondary">
+            <div className="rounded-[12px] border border-border-subtle px-5 py-4 text-sm text-text-secondary surface-soft">
               <LoadingDots />
             </div>
           </div>

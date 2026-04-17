@@ -10,7 +10,7 @@ export function ScenarioFlow({
 }) {
   return (
     <div className="module-shell flex h-[calc(100dvh-11rem)] flex-col md:h-[calc(100dvh-9rem)]">
-      <div className="border-b border-border-subtle bg-[rgba(255,255,255,0.62)] px-4 py-4 md:px-5">
+      <div className="border-b border-border-subtle px-4 py-4 surface-soft md:px-5">
         <button type="button" className="secondary-button" onClick={onBack}>
           Back to scenarios
         </button>

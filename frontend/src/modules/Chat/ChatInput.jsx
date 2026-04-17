@@ -17,8 +17,11 @@ export function ChatInput({ onSend, isSending }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="sticky bottom-0 border-t border-border-subtle bg-[rgba(255,255,255,0.72)] px-3 py-3 backdrop-blur md:px-4"
-      style={{ paddingBottom: 'max(12px, env(safe-area-inset-bottom))' }}
+      className="sticky bottom-0 border-t border-border-subtle px-3 py-3 backdrop-blur md:px-4"
+      style={{
+        background: 'var(--surface-glass)',
+        paddingBottom: 'max(12px, env(safe-area-inset-bottom))'
+      }}
     >
       <div className="flex flex-col gap-3 md:flex-row">
         <textarea

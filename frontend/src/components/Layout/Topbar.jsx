@@ -3,11 +3,11 @@ import { useLocation } from 'react-router-dom'
 import { DisclaimerBadge } from '../shared/DisclaimerBadge.jsx'
 
 const titles = {
-  '/': 'Legal Chat',
-  '/fir': 'FIR Draft',
-  '/bail': 'Bail Checker',
-  '/doc': 'Doc Simplifier',
-  '/rights': 'Know Your Rights',
+  '/app': 'Legal Chat',
+  '/app/fir': 'FIR Draft',
+  '/app/bail': 'Bail Checker',
+  '/app/doc': 'Doc Simplifier',
+  '/app/rights': 'Know Your Rights',
   '/admin': 'Admin Panel'
 }
 

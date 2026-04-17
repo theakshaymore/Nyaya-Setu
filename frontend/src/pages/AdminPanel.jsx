@@ -109,18 +109,18 @@ export function AdminPanel() {
                 className={`relative h-12 w-24 rounded-full border transition ${
                   config?.use_local_llm
                     ? 'border-gold bg-gold'
-                    : 'border-border-subtle bg-slate-200'
+                    : 'border-border-subtle surface-soft'
                 }`}
                 onClick={handleToggle}
                 disabled={isUpdating}
               >
                 <span
-                  className={`absolute top-1 h-10 w-10 rounded-full bg-white shadow transition ${
+                  className={`absolute top-1 h-10 w-10 rounded-full shadow transition ${
                     config?.use_local_llm
                       ? 'translate-x-[3rem]'
                       : 'translate-x-0'
                   }`}
-                  style={{ left: '0.25rem' }}
+                  style={{ left: '0.25rem', background: 'var(--surface-strong)' }}
                 />
               </button>
             </div>
