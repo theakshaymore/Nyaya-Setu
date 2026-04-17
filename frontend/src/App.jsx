@@ -15,8 +15,8 @@ function PlaceholderModule({ title }) {
   return (
     <div className="module-shell flex items-center justify-center p-10">
       <div className="max-w-lg text-center">
-        <p className="font-display text-3xl text-ink">{title}</p>
-        <p className="mt-3 text-sm leading-7 text-slate-500">
+        <p className="section-title">{title}</p>
+        <p className="mt-3 text-sm leading-7 text-text-secondary">
           This module shell is ready for the next build step.
         </p>
       </div>

@@ -81,30 +81,35 @@ export function AdminPanel() {
     <div className="module-shell p-8">
       <div className="max-w-xl space-y-6">
         <div>
-          <p className="font-display text-3xl text-ink">Hidden Admin Control</p>
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="eyebrow">Restricted access</p>
+          <p className="mt-2 text-[28px] font-semibold leading-[1.1] text-text-primary">
+            Hidden Admin Control
+          </p>
+          <p className="mt-2 text-sm text-text-secondary">
             Switch between Groq cloud inference and your local Ollama deployment.
           </p>
         </div>
 
         {isLoading ? (
-          <p className="text-sm text-slate-500">Loading current status...</p>
+          <p className="text-sm text-text-secondary">Loading current status...</p>
         ) : (
           <div className="panel p-6">
             <div className="flex items-center justify-between gap-4">
               <div>
-                <p className="text-sm uppercase tracking-[0.24em] text-slate-400">
+                <p className="eyebrow">
                   Use Local LLM
                 </p>
-                <p className="mt-2 text-lg font-medium text-ink">
+                <p className="mt-2 text-lg font-medium text-text-primary">
                   {config?.use_local_llm ? 'Enabled' : 'Disabled'}
                 </p>
               </div>
 
               <button
                 type="button"
-                className={`relative h-12 w-24 rounded-full transition ${
-                  config?.use_local_llm ? 'bg-gold' : 'bg-slate-300'
+                className={`relative h-12 w-24 rounded-full border transition ${
+                  config?.use_local_llm
+                    ? 'border-gold bg-gold'
+                    : 'border-border-subtle bg-slate-200'
                 }`}
                 onClick={handleToggle}
                 disabled={isUpdating}

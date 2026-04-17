@@ -1,6 +1,6 @@
 export function DisclaimerBadge() {
   return (
-    <span className="inline-flex items-center rounded-full bg-gold/15 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-ink">
+    <span className="status-badge text-[11px] uppercase tracking-[0.12em]">
       Not Legal Advice
     </span>
   )

@@ -4,23 +4,32 @@ export default {
   theme: {
     extend: {
       colors: {
-        shell: '#F3EFE6',
-        paper: '#F8F6F1',
-        ink: '#0F1729',
-        sidebar: '#1E2A3A',
-        gold: '#C9A84C',
-        mutedGold: '#E4D3A1'
+        'text-primary': 'var(--color-text-primary)',
+        'text-secondary': 'var(--color-text-secondary)',
+        'text-inverse': 'var(--color-text-inverse)',
+        'surface-base': 'var(--color-surface-base)',
+        'surface-muted': 'var(--color-surface-muted)',
+        'surface-raised': 'var(--color-surface-raised)',
+        'surface-strong': 'var(--color-surface-strong)',
+        'border-subtle': 'var(--color-border-subtle)',
+        'border-strong': 'var(--color-border-strong)',
+        'focus-ring': 'var(--color-focus-ring)',
+        'bg-canvas': 'var(--color-bg-canvas)',
+        'state-error': 'var(--color-state-error)',
+        'state-error-surface': 'var(--color-state-error-surface)',
+        gold: 'var(--color-surface-raised)',
+        ink: 'var(--color-text-primary)',
+        paper: 'var(--color-surface-muted)',
+        sidebar: 'var(--color-surface-muted)',
+        shell: 'var(--color-bg-canvas)'
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'serif'],
-        body: ['"DM Sans"', 'sans-serif']
+        display: ['Inter', 'sans-serif'],
+        body: ['Inter', 'sans-serif']
       },
       boxShadow: {
-        legal: '0 20px 45px rgba(15, 23, 41, 0.12)'
-      },
-      backgroundImage: {
-        parchment:
-          'radial-gradient(circle at top left, rgba(201, 168, 76, 0.16), transparent 28%), radial-gradient(circle at bottom right, rgba(15, 23, 41, 0.08), transparent 34%)'
+        legal:
+          'rgba(0, 0, 0, 0.08) 0px 1px 2px -0.5px, rgba(0, 0, 0, 0.12) 0px -0.5px 0px 0px inset'
       }
     }
   },
