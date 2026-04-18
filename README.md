@@ -1,8 +1,8 @@
-# ⚖️ NyayaSetu
+# ⚖️ Nyaya-Setu
 
 **A Hybrid AI Legal Assistant for Indian Citizens.** _Bridging the gap between complex laws and common understanding._
 
----
+## ![NyayaSetu](/ss1.png)
 
 ## 🏗️ The Project
 
@@ -10,10 +10,7 @@
 
 ### 🌟 Key Features
 
-- **Legal Chat:** AI-powered Q&A on IPC, CrPC, and the Constitution.
-- **FIR Generator:** Automated drafting of First Information Reports.
-- **Bail Checker:** Instant eligibility status for common offenses.
-- **Doc Simplifier:** Converts legal jargon into plain, readable English/Hindi.
+## ![NyayaSetu](/ss2.png)
 
 ---
 
