@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
-import { useNavigate } from 'react-router-dom'
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function HeroMockup() {
   return (
@@ -10,11 +10,11 @@ function HeroMockup() {
           <p className="eyebrow">What NyayaSetu helps you do</p>
           <div className="mt-4 grid gap-3">
             {[
-              'Ask grounded Indian law questions',
-              'Draft FIR complaints from incident facts',
-              'Check bail position and documents',
-              'Simplify dense legal clauses',
-              'Understand rights in common situations'
+              "Ask grounded Indian law questions",
+              "Draft FIR complaints from incident facts",
+              "Check bail position and documents",
+              "Simplify dense legal clauses",
+              "Understand rights in common situations",
             ].map((item) => (
               <div
                 key={item}
@@ -32,22 +32,28 @@ function HeroMockup() {
         <div className="panel overflow-hidden">
           <div className="grid grid-cols-[180px_1fr]">
             <div className="border-r border-border-subtle px-4 py-5 surface-soft">
-              <p className="text-lg font-semibold text-text-primary">NyayaSetu</p>
+              <p className="text-lg font-semibold text-text-primary">
+                NyayaSetu
+              </p>
               <div className="mt-5 space-y-2">
-                {['Legal Chat', 'FIR Draft', 'Bail Checker', 'Doc Simplifier', 'Know Your Rights'].map(
-                  (label, index) => (
-                    <div
-                      key={label}
-                      className={`rounded-[10px] px-3 py-2 text-sm ${
-                        index === 1
-                          ? 'border border-surface-raised surface-strong text-text-primary'
-                          : 'border border-transparent text-text-secondary'
-                      }`}
-                    >
-                      {label}
-                    </div>
-                  )
-                )}
+                {[
+                  "Legal Chat",
+                  "FIR Draft",
+                  "Bail Checker",
+                  "Doc Simplifier",
+                  "Know Your Rights",
+                ].map((label, index) => (
+                  <div
+                    key={label}
+                    className={`rounded-[10px] px-3 py-2 text-sm ${
+                      index === 1
+                        ? "border border-surface-raised surface-strong text-text-primary"
+                        : "border border-transparent text-text-secondary"
+                    }`}
+                  >
+                    {label}
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -75,17 +81,17 @@ function HeroMockup() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export function LandingPage({ theme, onToggleTheme }) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function handleKnowMore() {
-    document.getElementById('about-project')?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
+    document.getElementById("about-project")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }
 
   return (
@@ -93,7 +99,9 @@ export function LandingPage({ theme, onToggleTheme }) {
       <div className="mx-auto max-w-7xl px-4 py-5 md:px-6 md:py-6">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-[26px] font-semibold text-text-primary">NyayaSetu</p>
+            <p className="text-[26px] font-semibold text-text-primary">
+              NyayaSetu
+            </p>
             <p className="mt-1 text-sm text-text-secondary">
               Indian legal guidance workspace
             </p>
@@ -102,9 +110,11 @@ export function LandingPage({ theme, onToggleTheme }) {
             type="button"
             className="theme-toggle"
             onClick={onToggleTheme}
-            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            aria-label={
+              theme === "light" ? "Switch to dark mode" : "Switch to light mode"
+            }
           >
-            <span aria-hidden="true">{theme === 'light' ? '☾' : '☼'}</span>
+            <span aria-hidden="true">{theme === "light" ? "☾" : "☼"}</span>
           </button>
         </div>
 
@@ -126,7 +136,7 @@ export function LandingPage({ theme, onToggleTheme }) {
               <button
                 type="button"
                 className="primary-button"
-                onClick={() => navigate('/login')}
+                onClick={() => navigate("/login")}
               >
                 Login
               </button>
@@ -140,9 +150,9 @@ export function LandingPage({ theme, onToggleTheme }) {
             </div>
             <div className="grid gap-3 sm:grid-cols-3">
               {[
-                ['Chat', 'Understand relevant Indian law faster'],
-                ['Draft', 'Create structured FIR complaints'],
-                ['Rights', 'Get scenario-based next steps']
+                ["Chat", "Understand relevant Indian law faster"],
+                ["Draft", "Create structured FIR complaints"],
+                ["Rights", "Get scenario-based next steps"],
               ].map(([title, copy], index) => (
                 <motion.div
                   key={title}
@@ -152,7 +162,9 @@ export function LandingPage({ theme, onToggleTheme }) {
                   className="panel px-4 py-4"
                 >
                   <p className="eyebrow">{title}</p>
-                  <p className="mt-2 text-sm leading-6 text-text-secondary">{copy}</p>
+                  <p className="mt-2 text-sm leading-6 text-text-secondary">
+                    {copy}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -174,42 +186,46 @@ export function LandingPage({ theme, onToggleTheme }) {
               A legal assistance dashboard built around real user tasks
             </h2>
             <p className="mt-4 text-base leading-7 text-text-secondary">
-              NyayaSetu is not just a chatbot. It is a multi-tool legal assistant
-              for Indian law workflows, designed to help users move from questions
-              to structured outputs and next actions.
+              NyayaSetu is not just a chatbot. It is a multi-tool legal
+              assistant for Indian law workflows, designed to help users move
+              from questions to structured outputs and next actions.
             </p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {[
               [
-                'Legal Chat',
-                'Ask questions about IPC, CrPC, constitutional rights, and legal procedure in plain language.'
+                "Legal Chat",
+                "Ask questions about IPC, CrPC, constitutional rights, and legal procedure in plain language.",
               ],
               [
-                'FIR Draft',
-                'Turn incident details into a formal FIR draft with suggested sections and copy-ready output.'
+                "FIR Draft",
+                "Turn incident details into a formal FIR draft with suggested sections and copy-ready output.",
               ],
               [
-                'Bail Checker',
-                'Check whether an offence is bailable, what court usually handles it, and what documents are needed.'
+                "Bail Checker",
+                "Check whether an offence is bailable, what court usually handles it, and what documents are needed.",
               ],
               [
-                'Doc Simplifier',
-                'Paste agreements, notices, or contracts and get summaries, clause breakdowns, and risk flags.'
+                "Doc Simplifier",
+                "Paste agreements, notices, or contracts and get summaries, clause breakdowns, and risk flags.",
               ],
               [
-                'Know Your Rights',
-                'Choose common scenarios like police encounter, landlord dispute, salary issue, or consumer complaint.'
+                "Know Your Rights",
+                "Choose common scenarios like police encounter, landlord dispute, salary issue, or consumer complaint.",
               ],
               [
-                'Admin LLM Control',
-                'Switch between cloud inference and a local Ollama model through the hidden admin control panel.'
-              ]
+                "Admin LLM Control",
+                "Switch between cloud inference and a local Ollama model through the hidden admin control panel.",
+              ],
             ].map(([title, copy]) => (
               <div key={title} className="panel px-5 py-5">
-                <p className="text-lg font-semibold text-text-primary">{title}</p>
-                <p className="mt-3 text-sm leading-7 text-text-secondary">{copy}</p>
+                <p className="text-lg font-semibold text-text-primary">
+                  {title}
+                </p>
+                <p className="mt-3 text-sm leading-7 text-text-secondary">
+                  {copy}
+                </p>
               </div>
             ))}
           </div>
@@ -218,17 +234,27 @@ export function LandingPage({ theme, onToggleTheme }) {
         <footer className="mt-20 border-t border-border-subtle py-8">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-lg font-semibold text-text-primary">NyayaSetu</p>
+              <p className="text-lg font-semibold text-text-primary">
+                NyayaSetu
+              </p>
               <p className="mt-1 text-sm text-text-secondary">
-                Bridge to justice through structured legal assistance.
+                Built for Indian legal workflows. Not a substitute for qualified
+                legal advice.
               </p>
             </div>
             <div className="text-sm text-text-secondary">
-              Built for Indian legal workflows. Not a substitute for qualified legal advice.
+              <span
+                onClick={() =>
+                  window.open("https://github.com/theakshaymore", "_blank")
+                }
+                className="cursor-pointer hover:underline"
+              >
+                Akshay More 🧑‍💻
+              </span>
             </div>
           </div>
         </footer>
       </div>
     </div>
-  )
+  );
 }
