@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react'
-import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 
-import { LoginPage } from './components/Auth/LoginPage.jsx'
-import { ProtectedRoute } from './components/Auth/ProtectedRoute.jsx'
-import { Sidebar } from './components/Layout/Sidebar.jsx'
-import { Topbar } from './components/Layout/Topbar.jsx'
-import { BailModule } from './modules/Bail/BailModule.jsx'
-import { ChatModule } from './modules/Chat/ChatModule.jsx'
-import { DocModule } from './modules/DocSimplifier/DocModule.jsx'
-import { FIRModule } from './modules/FIR/FIRModule.jsx'
-import { RightsModule } from './modules/Rights/RightsModule.jsx'
-import { AdminPanel } from './pages/AdminPanel.jsx'
-import { LandingPage } from './pages/LandingPage.jsx'
+import { LoginPage } from "./components/Auth/LoginPage.jsx";
+import { ProtectedRoute } from "./components/Auth/ProtectedRoute.jsx";
+import { Sidebar } from "./components/Layout/Sidebar.jsx";
+import { Topbar } from "./components/Layout/Topbar.jsx";
+import { BailModule } from "./modules/Bail/BailModule.jsx";
+import { ChatModule } from "./modules/Chat/ChatModule.jsx";
+import { DocModule } from "./modules/DocSimplifier/DocModule.jsx";
+import { FIRModule } from "./modules/FIR/FIRModule.jsx";
+import { RightsModule } from "./modules/Rights/RightsModule.jsx";
+import { AdminPanel } from "./pages/AdminPanel.jsx";
+import { LandingPage } from "./pages/LandingPage.jsx";
 
 function PlaceholderModule({ title }) {
   return (
@@ -23,7 +23,7 @@ function PlaceholderModule({ title }) {
         </p>
       </div>
     </div>
-  )
+  );
 }
 
 function AppLayout({ theme, onToggleTheme }) {
@@ -31,32 +31,36 @@ function AppLayout({ theme, onToggleTheme }) {
     <div className="min-h-screen md:grid md:grid-cols-[280px_minmax(0,1fr)]">
       <Sidebar />
       <main className="min-w-0 p-3 md:p-6">
-        <Topbar
-          theme={theme}
-          onToggleTheme={onToggleTheme}
-        />
+        <Topbar theme={theme} onToggleTheme={onToggleTheme} />
         <Outlet />
       </main>
     </div>
-  )
+  );
 }
 
 export default function App() {
-  const [theme, setTheme] = useState(() => localStorage.getItem('nyayasetu-theme') || 'light')
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("nyayasetu-theme") || "light",
+  );
 
   useEffect(() => {
-    document.documentElement.dataset.theme = theme
-    localStorage.setItem('nyayasetu-theme', theme)
-  }, [theme])
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem("nyayasetu-theme", theme);
+  }, [theme]);
 
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route
         path="/"
-        element={<LandingPage theme={theme} onToggleTheme={() =>
-          setTheme((current) => (current === 'light' ? 'dark' : 'light'))
-        } />}
+        element={
+          <LandingPage
+            theme={theme}
+            onToggleTheme={() =>
+              setTheme((current) => (current === "light" ? "dark" : "light"))
+            }
+          />
+        }
       />
       <Route
         path="/admin"
@@ -64,7 +68,7 @@ export default function App() {
           <AppLayout
             theme={theme}
             onToggleTheme={() =>
-              setTheme((current) => (current === 'light' ? 'dark' : 'light'))
+              setTheme((current) => (current === "light" ? "dark" : "light"))
             }
           />
         }
@@ -77,7 +81,7 @@ export default function App() {
             <AppLayout
               theme={theme}
               onToggleTheme={() =>
-                setTheme((current) => (current === 'light' ? 'dark' : 'light'))
+                setTheme((current) => (current === "light" ? "dark" : "light"))
               }
             />
           </ProtectedRoute>
@@ -91,5 +95,5 @@ export default function App() {
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
-  )
+  );
 }
